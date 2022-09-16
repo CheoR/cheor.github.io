@@ -6,13 +6,13 @@
   "author": "CheoR",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CheoR/portfolio.git"
+    "url": "https://github.com/CheoR/cheor.github.io"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CheoR/portfolio.git/issues"
+    "url": "https://github.com/CheoR/cheor.github.io/issues"
   },
-  "homepage": "https://github.com/CheoR/portfolio.git#readme",
+  "homepage": "https://github.com/CheoR/cheor.github.io#readme",
   "keywords": [
     "gatsby",
     "personal",

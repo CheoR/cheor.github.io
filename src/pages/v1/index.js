@@ -173,7 +173,7 @@ const Index = () => {
             <li id="project--7" className={styles.gallery__project}>
               <a
                 className={styles.gallery__project__link}
-                href="https://github.com/CheoR/portfolio"
+                href="https://cheor.github.io"
                 aria-label="Personal Portfolio"
                 rel="noreferrer"
                 target="_blank"

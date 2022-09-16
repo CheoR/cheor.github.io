@@ -65,8 +65,8 @@ export const PROJECTS = [
   {
     id: "b4376e9d-bc40-4b35-b8f6-21ee8a0be005",
     preview: "",
-    repo: "https://github.com/CheoR/portfolio",
-    link: "https://cheor.github.io/portfolio/",
+    repo: "https://github.com/CheoR/cheor.github.io",
+    link: "https://cheor.github.io/",
     aria: "Personal Portfolio",
     label: "Personal Portfolio",
     description: "Quisque ultricies aliquam gravida.",
@@ -249,7 +249,7 @@ export const PAGES = [
     page: "Contact",
   },
   {
-    url: "/v1", // https://cheor.github.io/portfolio/v1/",
+    url: "/v1", // https://cheor.github.io/v1/",
     page: "Portfolio V1",
   },
 ];

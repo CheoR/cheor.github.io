@@ -3,10 +3,10 @@ require("dotenv").config({
 });
 
 module.exports = {
-  pathPrefix: "/portfolio",
+  pathPrefix: "/",
   siteMetadata: {
     title: `Cheo Roman Portfolio`,
-    siteUrl: `https://cheor.github.io/portfolio/`,
+    siteUrl: `https://cheor.github.io/`,
     author: "CheoR",
     description: "CheoR Web Dev Portfolio",
     image: "/assets/images/self.png",
