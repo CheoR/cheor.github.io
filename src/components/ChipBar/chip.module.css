@@ -1,0 +1,14 @@
+.chip {
+  padding: 0rem .5rem;
+  border-radius: 16px;
+  border: 1px solid black;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .75rem;
+        /* overflow-y: hidden;
+          overflow-x: auto;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch; */
+}

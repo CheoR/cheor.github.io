@@ -1,0 +1,231 @@
+/* @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One&display=swap");
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	overflow-wrap: break-word;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	line-height: 1.5;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: rgb(73, 14, 236);
+  font-size: 16px;
+  font-display: swap;
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-rows: repeat(3, fr);
+  gap: 1rem;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Patua One", serif;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+	border-top: 2px solid black;
+	border-top-width: 60%;
+}
+
+label,
+.submit {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+p {
+  letter-spacing: 2px;
+  word-spacing: 0.25rem;
+  margin-bottom: .5rem;
+  font-size: 1rem;
+  padding: .5rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  font-size: 1rem;
+  width: 100%;
+  background: lightgray;
+  border-bottom: 0.5rem solid black;
+} */
+
+.main,
+.header,
+.info {
+	padding: .5rem;
+}
+
+.gallery__project {
+	text-align: center;
+	padding: 1rem;
+	font-size: 1.25rem;
+	border-bottom: 1px solid black;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.gallery__project:hover {
+	background: orange;
+}
+
+
+.technologies {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+}
+
+.technology__item {
+	display: flex;	
+}
+
+.technology__img {
+	max-height: 60px;
+	max-width: 60px;
+}
+
+.socials {
+	display: flex;
+	justify-content: space-evenly;
+	font-size: 1.5rem;
+}
+
+.info__copy {
+	font-size: .5rem;
+	text-align: center;
+}
+.socials__item__link {
+	font-size: 3rem;
+}
+
+/*
+    xs, extra-small: 0px
+    sm, small: 600px
+    md, medium: 900px
+    lg, large: 1200px
+    xl, extra-large: 1536px
+*/
+
+@media only screen and (min-device-width: 600px) {
+
+	h1 {
+		text-align: center;
+		/* background: blue; */
+		display: flex;
+		align-items: center;
+		padding: 1rem;
+	}
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		max-height: 350px;
+	}
+
+	.img__container {
+		min-width: 300px;
+		max-width: 600px;
+	}
+
+	.technologies {
+		grid-template-columns: repeat(8, 1fr);
+	}	
+	
+	.socials {
+		justify-content: center;
+	}
+	
+	.socials__item {
+		padding: 1rem;
+	}
+}
+
+@media only screen and (min-device-width: 900px) {
+
+	h1 {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.main {
+		display: flex;
+	}
+
+	.main__content {
+		width: 75%;
+	}
+
+	.projects {
+		width: 25%;
+	}
+
+	.technologies img {
+		max-width: 50px;
+		max-height: 50px;
+	}
+
+	.technologies {
+		width: 40%;
+		margin: 0 auto;
+		grid-template-columns: repeat(6, 1fr);
+		text-align: center;
+	}
+
+	.technology__item {
+		padding: 0px;
+		margin: 0px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.technology__img {
+		margin: 0px;
+	}
+
+	.socials__item__link {
+		font-size: 1rem;
+	}
+}
