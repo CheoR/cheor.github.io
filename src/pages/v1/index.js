@@ -43,7 +43,7 @@ import { Link } from "gatsby";
 
 const Index = () => {
   return (
-    <div className={styles.v1}>
+    <>
       <header id="home" className={styles.header}>
         <div className={styles.img__container}>
           <img
@@ -541,7 +541,7 @@ const Index = () => {
           </p>
         </section>
       </footer>
-    </div>
+    </>
   );
 };
 

@@ -72,16 +72,6 @@ export const PROJECTS = [
     description: "Quisque ultricies aliquam gravida.",
     tags: ["CSS", "Gatsby", "HTML", "JavaScript"],
   },
-  {
-    id: "da802676-c191-4278-9627-59fe6214054f",
-    preview: "",
-    repo: "",
-    link: "./assets/pdf/Cheo_Roman_Resume.pdf",
-    aria: "Downloadable Resume",
-    label: "Resume",
-    description: "Lorem, ipsum dolor sit amet consectetur.",
-    tags: ["Resume"],
-  },
 ];
 
 export const CHIPS = [

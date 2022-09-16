@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Box, Chip, Grid, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Accordion from "@mui/material/Accordion";
