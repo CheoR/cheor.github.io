@@ -16,6 +16,8 @@ import AttractionsIcon from "@mui/icons-material/Attractions";
 import { Link } from "gatsby";
 
 import { PAGES } from "../../data/data";
+import resume from "../../../assets/pdf/Cheo_Roman_Resume.pdf";
+
 import avatar from "../../../assets/images/self.png";
 
 const Navbar = () => {
@@ -91,6 +93,19 @@ const Navbar = () => {
                   </Typography>
                 </MenuItem>
               ))}
+              <MenuItem key={"Resume"} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">
+                  <Link
+                    href={resume}
+                    aria-label="Download Resume"
+                    rel="noreferrer"
+                    target="_blank"
+                    download=""
+                  >
+                    Resume
+                  </Link>
+                </Typography>
+              </MenuItem>
             </Menu>
           </Box>
           <AttractionsIcon
@@ -124,6 +139,21 @@ const Navbar = () => {
                 <Link to={obj.url}>{obj.page}</Link>
               </Button>
             ))}
+            <Button
+              key="Resume"
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <Link
+                href={resume}
+                aria-label="Download Resume"
+                rel="noreferrer"
+                target="_blank"
+                download=""
+              >
+                Resume
+              </Link>
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
