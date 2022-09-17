@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Box } from "@mui/material";
@@ -26,7 +26,7 @@ const ContactPage = () => {
       <Layout pageTitle="Let's Chat!">
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <form
-            className={styles.main__form}
+            // className={styles.main__form}
             id="fs-frm"
             name="simple-contact-form"
             acceptCharset="utf-8"
@@ -75,7 +75,7 @@ const ContactPage = () => {
                 name="inputMsg"
                 id="inputMsg"
                 required=""
-                placeholder="Message"
+                placeholder="Hey!"
               ></textarea>
               <ValidationError
                 prefix="Message"
