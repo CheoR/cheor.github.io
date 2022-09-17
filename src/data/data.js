@@ -6,7 +6,8 @@ export const PROJECTS = [
     link: "https://shipitout.herokuapp.com/",
     aria: "GitHub Project: Ship It Out",
     label: "ShipItOut",
-    description: "In sit amet libero eros.",
+    description:
+      "ShipItOut is my full stack NSS C46 capstone project. It is related to my initial project, PackItUp. ShipItOut consist of React front-end and Django backend. It is a dashboard-like app that tracks shipping containers where the shipper, container, port authorities can update the container status as it moves. ",
     tags: ["Django", "Heroku", "Node", "MUI", "React"],
   },
   {
@@ -16,7 +17,8 @@ export const PROJECTS = [
     link: "https://cr-demo--packitup.netlify.app/",
     aria: "GitHub Project: Pack It Up",
     label: "PackItUp",
-    description: "In sit amet libero eros.",
+    description:
+      "NSS front-end capstone project. PackItUp is a moving app to help users keep track of what items went into what box for moving/storage. ",
     tags: ["React"],
   },
   {
@@ -26,7 +28,8 @@ export const PROJECTS = [
     link: "",
     aria: "GitHub Project: Beer Me",
     label: "BeerMe",
-    description: "Praesent posuere viverra tempor. ",
+    description:
+      "TDD project with React Frontend and Django backend. Testing done with Jest/Enzyme and Selenium. ",
     tags: ["Enzyme", "Formik", "React", "Yup"],
   },
   {
@@ -37,7 +40,7 @@ export const PROJECTS = [
     aria: "GitHub Project: Wine Recommender",
     label: "Wine Recommender",
     description:
-      "Nunc vitae velit consequat massa ullamcorper sodales. Nunc vitae velit consequat massa ullamcorper sodales. Nunc vitae velit consequat massa ullamcorper sodales.",
+      "Wine recommender k-means clustering to recommend wines based on user preferences and previous wine scores. This project uses TDD approach, Django backend and Travis-CI for deployment. ",
     tags: ["CI", "Django", "TDD"],
   },
   {
@@ -48,7 +51,7 @@ export const PROJECTS = [
     aria: "GitHub Project: Free Code Camp Projects",
     label: "FCC Projects",
     description:
-      "Phasellus vitae ante tortor. Sed dapibus dui id libero dapibus ornare.",
+      "FreeCodeCamp projects using HTML, CSS, React, Bootstrap and JavaScript. ",
     tags: ["CSS", "HTML", "JavaScript"],
   },
   {
@@ -58,8 +61,7 @@ export const PROJECTS = [
     link: "",
     aria: "GitHub Project: Code Pen Projects",
     label: "CodePen",
-    description:
-      "Aliquam erat volutpat. Morbi bibendum sem id dolor euismod interdum.",
+    description: "Pens",
     tags: ["CSS", "HTML", "JavaScript"],
   },
   {
@@ -69,7 +71,7 @@ export const PROJECTS = [
     link: "https://cheor.github.io/",
     aria: "Personal Portfolio",
     label: "Personal Portfolio",
-    description: "Quisque ultricies aliquam gravida.",
+    description: "You're viewing it!",
     tags: ["CSS", "Gatsby", "HTML", "JavaScript"],
   },
 ];
