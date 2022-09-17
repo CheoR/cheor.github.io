@@ -35,6 +35,7 @@ const BlogPost = ({ data, children }) => {
               </a>
             </Typography>
           </Box>
+          <Typography variant="subtitle2">{fm.datePublished}</Typography>
           <Box sx={{ display: "flex", gap: 1 }}>
             {fm.tags.map((tag) => (
               <Typography key={tag} variant="subtitle1">
@@ -42,7 +43,6 @@ const BlogPost = ({ data, children }) => {
               </Typography>
             ))}
           </Box>
-          <Typography variant="subtitle2">{fm.datePublished}</Typography>
           {children}
         </Box>
       </Layout>
