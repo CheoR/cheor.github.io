@@ -1,32 +1,42 @@
 import React from "react";
 import { useSiteMetadata } from "../../hooks/use-site-metadata";
 
-export const SEO = ({ title, description, image, pathname, children }) => {
+export const SEO = ({
+  title,
+  description,
+  image,
+  pathname,
+  keywords,
+  children,
+}) => {
   const {
     title: defaultTitle,
     description: defaultDescription,
     image: defaultImage,
+    keywords: defaultKeywords,
     siteUrl,
   } = useSiteMetadata();
 
   const seo = {
     title: title || defaultTitle,
-    description: description || defaultDescription,
+    url: `${siteUrl}${pathname || ""}`,
+    keywords: keywords || defaultKeywords,
     image: `${siteUrl}${defaultImage || image}`,
-    url: `${siteUrl}${pathname || ``}`,
+    description: description || defaultDescription,
   };
 
   return (
     <>
       <title>{seo.title}</title>
-      <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:url" content={seo.url} />
-      <meta property="og:description" content={seo.description} />
-      <meta property="og:image" content={seo.image} />
-      <meta property="og:type" content="website" />
+      <meta name="description" content={seo.description} />
+      <meta name="keywords" content={seo.keywords} />
       <meta name="viewport" content="initial-scale=1, width=device-width" />
+      <meta property="og:url" content={seo.url} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:image" content={seo.image} />
+      <meta property="og:description" content={seo.description} />
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
