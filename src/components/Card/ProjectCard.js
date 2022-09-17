@@ -12,7 +12,7 @@ const ProjectCard = (props) => {
     <Card sx={{ width: 345, maxHeight: 400 }}>
       <CardMedia
         component="img"
-        sx={{ height: 100, background: "lightgray" }}
+        sx={{ height: 100, background: "rgb(197, 206, 219)" }}
         image={props.data.preview}
         alt=""
       />

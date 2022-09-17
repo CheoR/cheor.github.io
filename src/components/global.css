@@ -98,6 +98,8 @@ input,
 textarea {
   font-size: 1rem;
   width: 100%;
-  background: lightgray;
+  background: rgb(197,
+    206,
+    219);
   border-bottom: 0.5rem solid black;
 }

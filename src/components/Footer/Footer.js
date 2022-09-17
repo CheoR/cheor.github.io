@@ -8,7 +8,7 @@ import { SOCIALS } from "../../data/data";
 
 const Footer = () => {
   return (
-    <Box component="footer">
+    <Box component="footer" sx={{ background: "rgb(197, 206, 219)" }}>
       <Grid container>
         <Grid item xs={12}>
           <Typography
@@ -27,7 +27,7 @@ const Footer = () => {
             Let's Connect!
           </Typography>
         </Grid>
-        <Grid item xs={12} md={8} order={{ xs: 1, md: 2 }}>
+        <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
           <Box
             sx={{
               display: "flex",
@@ -51,7 +51,7 @@ const Footer = () => {
             </IconButton>
           </Box>
         </Grid>
-        <Grid item xs={12} md={4} order={{ xs: 2, md: 1 }}>
+        <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
           <Typography
             variant="h6"
             noWrap

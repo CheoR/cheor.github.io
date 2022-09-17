@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 import { Box, Container, Grid, Typography } from "@mui/material";
 
@@ -20,8 +20,8 @@ const Layout = ({ pageTitle, children }) => {
       <Grid item>
         <Navbar />
       </Grid>
-      <Grid item sx={{ flex: 1 }}>
-        <Container component="main" mb={5}>
+      <Grid item sx={{ flex: 1 }} mb={1}>
+        <Container component="main">
           <Box mt={10}>
             <Typography sx={{ textAlign: "center" }}>{pageTitle}</Typography>
           </Box>
