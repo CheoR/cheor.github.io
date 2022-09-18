@@ -9,7 +9,7 @@ module.exports = {
     siteUrl: `https://cheor.github.io/`,
     author: "CheoR",
     description: "CheoR Web Dev Portfolio",
-    image: "./src/images/icon.png", // "/assets/images/self.png",
+    image: "/assets/images/self.png",
     keywords: "CheoR Web Dev Portfolio",
   },
   plugins: [
