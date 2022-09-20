@@ -34,7 +34,7 @@ const Home = () => {
   return (
     <>
       <CssBaseline />
-      <Layout pageTitle="Testing GH Actions changed struct">
+      <Layout pageTitle="">
         <Gallery
           data={data}
           chips={chips}

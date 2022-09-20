@@ -43,37 +43,27 @@ export const PROJECTS = [
       "Wine recommender k-means clustering to recommend wines based on user preferences and previous wine scores. This project uses TDD approach, Django backend and Travis-CI for deployment. ",
     tags: ["CI", "Django", "TDD"],
   },
-  {
-    id: "c3e4c2a5-c5cf-4c70-920f-7cdf7c246118",
-    preview: "",
-    repo: "https://github.com/CheoR/FreeCodeCampProjects",
-    link: "",
-    aria: "GitHub Project: Free Code Camp Projects",
-    label: "FCC Projects",
-    description:
-      "FreeCodeCamp projects using HTML, CSS, React, Bootstrap and JavaScript. ",
-    tags: ["CSS", "HTML", "JavaScript"],
-  },
-  {
-    id: "de5fad68-95eb-4b5c-9d15-af576b845280",
-    preview: "",
-    repo: "https://codepen.io/CheoR/full/QzPJbQ",
-    link: "",
-    aria: "GitHub Project: Code Pen Projects",
-    label: "CodePen",
-    description: "Pens",
-    tags: ["CSS", "HTML", "JavaScript"],
-  },
-  {
-    id: "b4376e9d-bc40-4b35-b8f6-21ee8a0be005",
-    preview: "https://cheor.github.io/",
-    repo: "https://github.com/CheoR/cheor.github.io",
-    link: "https://cheor.github.io/",
-    aria: "Personal Portfolio",
-    label: "Personal Portfolio",
-    description: "You're viewing it!",
-    tags: ["CSS", "Gatsby", "HTML", "JavaScript"],
-  },
+  // {
+  //   id: "c3e4c2a5-c5cf-4c70-920f-7cdf7c246118",
+  //   preview: "",
+  //   repo: "https://github.com/CheoR/FreeCodeCampProjects",
+  //   link: "",
+  //   aria: "GitHub Project: Free Code Camp Projects",
+  //   label: "FCC Projects",
+  //   description:
+  //     "FreeCodeCamp projects using HTML, CSS, React, Bootstrap and JavaScript. ",
+  //   tags: ["CSS", "HTML", "JavaScript"],
+  // },
+  // {
+  //   id: "de5fad68-95eb-4b5c-9d15-af576b845280",
+  //   preview: "",
+  //   repo: "https://codepen.io/CheoR/full/QzPJbQ",
+  //   link: "",
+  //   aria: "GitHub Project: Code Pen Projects",
+  //   label: "CodePen",
+  //   description: "Pens",
+  //   tags: ["CSS", "HTML", "JavaScript"],
+  // },
 ];
 
 export const CHIPS = [
