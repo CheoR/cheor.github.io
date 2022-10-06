@@ -6,11 +6,19 @@ export const PROJECTS = [
     link: "",
     aria: "GitHub Project: PackItUpV2",
     label: "PackItUpV2",
-    description: "PackItUpV2 is a mobile app version of PackItUp, moving/inventory app that helps users track what they pack. ",
-    tags: ["Cypress", "Mobile", "MongoDB", "MUI", "React Native", "React Redux", "TDD"],
+    description:
+      "PackItUpV2 is a mobile app version of PackItUp, moving/inventory app that helps users track what they pack. ",
+    tags: [
+      "Cypress",
+      "Mobile",
+      "MongoDB",
+      "MUI",
+      "React-Native",
+      "Redux",
+      "TDD",
+    ],
   },
   {
-
     id: "a00d3362-b7c5-4a6d-8182-b976d454056d",
     preview: "",
     repo: "https://github.com/CheoR/shipItOut-client",

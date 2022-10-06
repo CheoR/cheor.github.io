@@ -41,12 +41,12 @@ const Gallery = ({ data, chips, filterChips, filterSearch, Card }) => {
           <AccordionDetails
             sx={{
               display: "flex",
-              justifyContent: "space-evenly",
+              justifyContent: "flex-start",
               flexWrap: "wrap",
               gap: 1,
             }}
           >
-            {chips.map((chip) => {
+            {chips.sort().map((chip) => {
               return (
                 <Chip
                   key={chip}

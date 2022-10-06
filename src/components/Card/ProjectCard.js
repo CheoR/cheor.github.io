@@ -38,8 +38,14 @@ const ProjectCard = (props) => {
           </Grid>
           <Grid item>
             <Box>
-              <Box sx={{ display: "flex", gap: 1 }}>
-                {props.data?.tags.map((tag) => (
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  columnGap: 1,
+                }}
+              >
+                {props.data?.tags.sort().map((tag) => (
                   <Typography key={tag} variant="subtitle1">
                     #{tag}
                   </Typography>
