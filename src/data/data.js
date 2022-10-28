@@ -27,7 +27,7 @@ export const PROJECTS = [
     label: "ShipItOut",
     description:
       "ShipItOut is my full stack NSS C46 capstone project. It is related to my initial project, PackItUp. ShipItOut consist of React front-end and Django backend. It is a dashboard-like app that tracks shipping containers where the shipper, container, port authorities can update the container status as it moves. ",
-    tags: ["Django", "Heroku", "Node", "MUI", "React"],
+    tags: ["Django", "Formik", "Heroku", "Node", "MUI", "React"],
   },
   {
     id: "c6409e2a-8f85-4141-b6fc-1c08315ffb98",
