@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import CssBaseline from "@mui/material/CssBaseline";
 
-import Layout from "../components/Layout/Layout";
 import Gallery from "../components/Gallery/Gallery";
 import Card from "../components/Card/ProjectCard";
 import { SEO } from "../components/SEO/SEO";
@@ -12,8 +10,9 @@ const chips = [
   ...new Set(PROJECTS.map((project) => project.tags).flat(1)),
 ];
 
-const Home = () => {
+function Home() {
   const [data, setData] = useState(PROJECTS);
+
   const filterChips = (chip) => {
     if (chip === "All") {
       setData(PROJECTS);
@@ -32,20 +31,15 @@ const Home = () => {
   };
 
   return (
-    <>
-      <CssBaseline />
-      <Layout pageTitle="">
-        <Gallery
-          data={data}
-          chips={chips}
-          filterChips={filterChips}
-          filterSearch={filterSearch}
-          Card={Card}
-        />
-      </Layout>
-    </>
+    <Gallery
+      data={data}
+      chips={chips}
+      filterChips={filterChips}
+      filterSearch={filterSearch}
+      Card={Card}
+    />
   );
-};
+}
 
 export default Home;
 

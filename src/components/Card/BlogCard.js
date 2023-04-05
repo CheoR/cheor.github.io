@@ -1,13 +1,17 @@
-import * as React from "react";
+import React from "react";
+
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
-import Card from "@mui/material/Card";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import { Box, Grid } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Grid,
+  Typography,
+} from "@mui/material";
 
 const BlogCard = (props) => {
   const image = getImage(props.data?.frontmatter.hero_image);

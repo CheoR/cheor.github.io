@@ -1,11 +1,17 @@
 import React, { useRef } from "react";
-import { Box, Chip, Grid, TextField } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
+
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import SearchIcon from "@mui/icons-material/Search";
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Box,
+  Chip,
+  Grid,
+  TextField,
+  Typography,
+} from "@mui/material";
 
 const Gallery = ({ data, chips, filterChips, filterSearch, Card }) => {
   const inputField = useRef();

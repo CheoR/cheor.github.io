@@ -1,11 +1,9 @@
-import * as React from "react";
-import { graphql } from "gatsby";
+import React from "react";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
-import CssBaseline from "@mui/material/CssBaseline";
+import { graphql } from "gatsby";
 
-import Layout from "../../components/Layout/Layout";
-import { SEO } from "../../components/SEO/SEO";
 import { Box, Typography } from "@mui/material";
+import { SEO } from "../../components/SEO/SEO";
 
 const BlogPost = ({ data, children }) => {
   const { frontmatter: fm } = data.mdx;
@@ -15,38 +13,31 @@ const BlogPost = ({ data, children }) => {
   console.log(fm);
 
   return (
-    <>
-      <CssBaseline />
-      <Layout pageTitle={fm.title}>
-        <Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <GatsbyImage image={image} alt={fm.hero_image_alt} />
-          </Box>
-          <Box component="p" align="center">
-            <Typography variant="caption">
-              Photo Credit:{" "}
-              <a href={fm.hero_image_credit_link}>
-                {fm.hero_image_credit_text}
-              </a>
-            </Typography>
-          </Box>
-          <Typography variant="subtitle2">{fm.datePublished}</Typography>
-          <Box sx={{ display: "flex", gap: 1 }}>
-            {fm.tags.map((tag) => (
-              <Typography key={tag} variant="subtitle1">
-                #{tag}
-              </Typography>
-            ))}
-          </Box>
-          {children}
-        </Box>
-      </Layout>
-    </>
+    <Box>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <GatsbyImage image={image} alt={fm.hero_image_alt} />
+      </Box>
+      <Box component="p" align="center">
+        <Typography variant="caption">
+          Photo Credit:{" "}
+          <a href={fm.hero_image_credit_link}>{fm.hero_image_credit_text}</a>
+        </Typography>
+      </Box>
+      <Typography variant="subtitle2">{fm.datePublished}</Typography>
+      <Box sx={{ display: "flex", gap: 1 }}>
+        {fm.tags.map((tag) => (
+          <Typography key={tag} variant="subtitle1">
+            #{tag}
+          </Typography>
+        ))}
+      </Box>
+      {children}
+    </Box>
   );
 };
 

@@ -1,27 +1,32 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
 import AttractionsIcon from "@mui/icons-material/Attractions";
-
+import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "gatsby";
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 
-import { PAGES } from "../../data/data";
 import resume from "../../../assets/pdf/Cheo_Roman_Resume.pdf";
-
+import { ToggleThemeContext } from "../../context/Theme";
 import avatar from "../../../assets/images/self.png";
+import { PAGES } from "../../data/data";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
+  const [isDark, setIsDark] = useState(false); // theme.palette.mode doesn't toggle
+  const { theme, toggleTheme } = useContext(ToggleThemeContext);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -158,6 +163,18 @@ const Navbar = () => {
 
           <Box sx={{ flexGrow: 0 }}>
             <Avatar alt="CheoR" src={avatar} />
+          </Box>
+          <Box
+            p={1}
+            sx={{
+              flexGrow: 0,
+            }}
+            onClick={() => {
+              toggleTheme((prevState) => !prevState);
+              setIsDark((prevState) => !prevState);
+            }}
+          >
+            {isDark ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />}
           </Box>
         </Toolbar>
       </Container>

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import CssBaseline from "@mui/material/CssBaseline";
 import { graphql } from "gatsby";
 
-import Layout from "../../components/Layout/Layout";
 import Gallery from "../../components/Gallery/Gallery";
 import Card from "../../components/Card/BlogCard";
 import { SEO } from "../../components/SEO/SEO";
@@ -33,18 +31,13 @@ const Blog = ({ data: _data }) => {
   };
 
   return (
-    <>
-      <CssBaseline />
-      <Layout pageTitle="Ramblings">
-        <Gallery
-          data={data}
-          chips={chips}
-          filterChips={filterChips}
-          filterSearch={filterSearch}
-          Card={Card}
-        />
-      </Layout>
-    </>
+    <Gallery
+      data={data}
+      chips={chips}
+      filterChips={filterChips}
+      filterSearch={filterSearch}
+      Card={Card}
+    />
   );
 };
 
