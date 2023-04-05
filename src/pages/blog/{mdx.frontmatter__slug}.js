@@ -13,38 +13,31 @@ const BlogPost = ({ data, children }) => {
   console.log(fm);
 
   return (
-    <>
-      <CssBaseline />
-      <Layout pageTitle={fm.title}>
-        <Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <GatsbyImage image={image} alt={fm.hero_image_alt} />
-          </Box>
-          <Box component="p" align="center">
-            <Typography variant="caption">
-              Photo Credit:{" "}
-              <a href={fm.hero_image_credit_link}>
-                {fm.hero_image_credit_text}
-              </a>
-            </Typography>
-          </Box>
-          <Typography variant="subtitle2">{fm.datePublished}</Typography>
-          <Box sx={{ display: "flex", gap: 1 }}>
-            {fm.tags.map((tag) => (
-              <Typography key={tag} variant="subtitle1">
-                #{tag}
-              </Typography>
-            ))}
-          </Box>
-          {children}
-        </Box>
-      </Layout>
-    </>
+    <Box>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <GatsbyImage image={image} alt={fm.hero_image_alt} />
+      </Box>
+      <Box component="p" align="center">
+        <Typography variant="caption">
+          Photo Credit:{" "}
+          <a href={fm.hero_image_credit_link}>{fm.hero_image_credit_text}</a>
+        </Typography>
+      </Box>
+      <Typography variant="subtitle2">{fm.datePublished}</Typography>
+      <Box sx={{ display: "flex", gap: 1 }}>
+        {fm.tags.map((tag) => (
+          <Typography key={tag} variant="subtitle1">
+            #{tag}
+          </Typography>
+        ))}
+      </Box>
+      {children}
+    </Box>
   );
 };
 

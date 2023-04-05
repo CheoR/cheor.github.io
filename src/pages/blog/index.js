@@ -31,18 +31,13 @@ const Blog = ({ data: _data }) => {
   };
 
   return (
-    <>
-      <CssBaseline />
-      <Layout pageTitle="Ramblings">
-        <Gallery
-          data={data}
-          chips={chips}
-          filterChips={filterChips}
-          filterSearch={filterSearch}
-          Card={Card}
-        />
-      </Layout>
-    </>
+    <Gallery
+      data={data}
+      chips={chips}
+      filterChips={filterChips}
+      filterSearch={filterSearch}
+      Card={Card}
+    />
   );
 };
 

@@ -31,17 +31,13 @@ function Home() {
   };
 
   return (
-    <ToggleThemeProvider>
-      <Layout pageTitle="">
-        <Gallery
-          data={data}
-          chips={chips}
-          filterChips={filterChips}
-          filterSearch={filterSearch}
-          Card={Card}
-        />
-      </Layout>
-    </ToggleThemeProvider>
+    <Gallery
+      data={data}
+      chips={chips}
+      filterChips={filterChips}
+      filterSearch={filterSearch}
+      Card={Card}
+    />
   );
 }
 
