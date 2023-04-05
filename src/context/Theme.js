@@ -1,14 +1,17 @@
 // // https://cimdalli.github.io/mui-theme-generator/
 import React, { createContext, useMemo, useState } from "react";
-import { ThemeProvider } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline, colors } from "@mui/material";
-import { createTheme } from "@mui/material/styles";
+
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 export const ToggleThemeContext = createContext();
+
 const _getTheme = (isDark) => {
   const theme = createTheme({
     palette: {
-      mode: isDark ? "dark" : "light",
+      mode: true ? "dark" : "light",
       ...(isDark
         ? {
             // dark mode palette values
@@ -32,7 +35,7 @@ const _getTheme = (isDark) => {
         : {
             // light mode palette values
             primary: {
-              main: "#3b3b4c",
+              main: "#c5cedb",
               light: "#e7e7f5",
             },
             secondary: {
@@ -52,15 +55,18 @@ const _getTheme = (isDark) => {
   });
   return theme;
 };
+
 export const ToggleThemeProvider = ({ children }) => {
   const [mode, toggleTheme] = useState(false);
   const theme = useMemo(() => _getTheme(mode), [mode]);
   return (
-    <ToggleThemeContext.Provider value={{ theme, toggleTheme }}>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <ToggleThemeContext.Provider value={{ theme, toggleTheme }}>
         <CssBaseline />
+        <Navbar />
         {children}
-      </ThemeProvider>
-    </ToggleThemeContext.Provider>
+        <Footer />
+      </ToggleThemeContext.Provider>
+    </ThemeProvider>
   );
 };
