@@ -5,7 +5,6 @@ import { CssBaseline, colors } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 
 export const ToggleThemeContext = createContext();
-
 const _getTheme = (isDark) => {
   const theme = createTheme({
     palette: {
@@ -13,11 +12,17 @@ const _getTheme = (isDark) => {
       ...(isDark
         ? {
             // dark mode palette values
-            primary: colors.deepOrange,
-            divider: colors.deepOrange[700],
+            primary: {
+              main: "#3b3b4c",
+              light: "#e7e7f5",
+            },
+            secondary: {
+              main: "#d1da06",
+            },
+            divider: "#fff",
             background: {
-              default: colors.deepOrange[900],
-              paper: colors.deepOrange[900],
+              default: "#303030",
+              paper: "#424242",
             },
             text: {
               primary: "#fff",
@@ -26,8 +31,18 @@ const _getTheme = (isDark) => {
           }
         : {
             // light mode palette values
-            primary: colors.amber,
-            divider: colors.amber[200],
+            primary: {
+              main: "#3b3b4c",
+              light: "#e7e7f5",
+            },
+            secondary: {
+              main: "#d1da06",
+            },
+            divider: "#201F1F",
+            background: {
+              default: "#fafafa",
+              paper: "#fff",
+            },
             text: {
               primary: colors.grey[900],
               secondary: colors.grey[800],
