@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
-import Layout from "../components/Layout/Layout";
 import Gallery from "../components/Gallery/Gallery";
 import Card from "../components/Card/ProjectCard";
+import Layout from "../components/Layout/Layout";
+import useDarkTheme from "../hooks/useTheme";
 import { SEO } from "../components/SEO/SEO";
 import { PROJECTS } from "../data/data";
 
@@ -12,8 +14,10 @@ const chips = [
   ...new Set(PROJECTS.map((project) => project.tags).flat(1)),
 ];
 
-const Home = () => {
+function Home() {
   const [data, setData] = useState(PROJECTS);
+  const [theme] = useDarkTheme(true);
+
   const filterChips = (chip) => {
     if (chip === "All") {
       setData(PROJECTS);
@@ -32,7 +36,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Layout pageTitle="">
         <Gallery
@@ -43,9 +47,9 @@ const Home = () => {
           Card={Card}
         />
       </Layout>
-    </>
+    </ThemeProvider>
   );
-};
+}
 
 export default Home;
 

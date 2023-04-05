@@ -1,27 +1,28 @@
 import React, { useState } from "react";
-
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import AttractionsIcon from "@mui/icons-material/Attractions";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
+import MenuItem from "@mui/material/MenuItem";
+import Toolbar from "@mui/material/Toolbar";
+import AppBar from "@mui/material/AppBar";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import AttractionsIcon from "@mui/icons-material/Attractions";
-
+import Menu from "@mui/material/Menu";
+import Box from "@mui/material/Box";
 import { Link } from "gatsby";
 
-import { PAGES } from "../../data/data";
 import resume from "../../../assets/pdf/Cheo_Roman_Resume.pdf";
-
 import avatar from "../../../assets/images/self.png";
+import { PAGES } from "../../data/data";
+import useDarkTheme from "../../hooks/useTheme";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
+  const [_, setMode] = useDarkTheme();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -156,7 +157,10 @@ const Navbar = () => {
             </Button>
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box
+            sx={{ flexGrow: 0 }}
+            onClick={() => setMode((prevState) => !prevState)}
+          >
             <Avatar alt="CheoR" src={avatar} />
           </Box>
         </Toolbar>
