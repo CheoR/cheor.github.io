@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-// import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
-// import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 
 import AttractionsIcon from "@mui/icons-material/Attractions";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -25,7 +25,8 @@ import { PAGES } from "../../data/data";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const { toggleTheme } = useContext(ToggleThemeContext);
+  const [isDark, setIsDark] = useState(false); // theme.palette.mode doesn't toggle
+  const { theme, toggleTheme } = useContext(ToggleThemeContext);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -160,11 +161,20 @@ const Navbar = () => {
             </Button>
           </Box>
 
-          <Box
-            sx={{ flexGrow: 0 }}
-            onClick={() => toggleTheme((prevState) => !prevState)}
-          >
+          <Box sx={{ flexGrow: 0 }}>
             <Avatar alt="CheoR" src={avatar} />
+          </Box>
+          <Box
+            p={1}
+            sx={{
+              flexGrow: 0,
+            }}
+            onClick={() => {
+              toggleTheme((prevState) => !prevState);
+              setIsDark((prevState) => !prevState);
+            }}
+          >
+            {isDark ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />}
           </Box>
         </Toolbar>
       </Container>
