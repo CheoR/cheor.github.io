@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
 
+import { ToggleThemeProvider } from "../context/Theme";
 import Gallery from "../components/Gallery/Gallery";
 import Card from "../components/Card/ProjectCard";
 import Layout from "../components/Layout/Layout";
-import useDarkTheme from "../hooks/useTheme";
 import { SEO } from "../components/SEO/SEO";
 import { PROJECTS } from "../data/data";
 
@@ -16,7 +14,6 @@ const chips = [
 
 function Home() {
   const [data, setData] = useState(PROJECTS);
-  const [theme] = useDarkTheme(true);
 
   const filterChips = (chip) => {
     if (chip === "All") {
@@ -36,8 +33,7 @@ function Home() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <ToggleThemeProvider>
       <Layout pageTitle="">
         <Gallery
           data={data}
@@ -47,7 +43,7 @@ function Home() {
           Card={Card}
         />
       </Layout>
-    </ThemeProvider>
+    </ToggleThemeProvider>
   );
 }
 

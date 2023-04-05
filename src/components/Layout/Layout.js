@@ -1,17 +1,15 @@
 import React from "react";
 
 import { Box, Container, Grid, Typography } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
 
-import useDarkTheme from "../../hooks/useTheme";
+import { ToggleThemeProvider } from "../../context/Theme";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
-// import "../global.css";
+import "../global.css";
 
 const Layout = ({ pageTitle, children }) => {
-  const [theme] = useDarkTheme();
   return (
-    <ThemeProvider theme={theme}>
+    <ToggleThemeProvider>
       <Grid
         container
         sx={{
@@ -35,7 +33,7 @@ const Layout = ({ pageTitle, children }) => {
           <Footer />
         </Grid>
       </Grid>
-    </ThemeProvider>
+    </ToggleThemeProvider>
   );
 };
 

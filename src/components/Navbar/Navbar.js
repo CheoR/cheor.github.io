@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
-import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import React, { useContext, useState } from "react";
+// import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+// import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import AttractionsIcon from "@mui/icons-material/Attractions";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
@@ -16,13 +16,13 @@ import Box from "@mui/material/Box";
 import { Link } from "gatsby";
 
 import resume from "../../../assets/pdf/Cheo_Roman_Resume.pdf";
+import { ToggleThemeContext } from "../../context/Theme";
 import avatar from "../../../assets/images/self.png";
 import { PAGES } from "../../data/data";
-import useDarkTheme from "../../hooks/useTheme";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [_, setMode] = useDarkTheme();
+  const { toggleTheme } = useContext(ToggleThemeContext);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -159,7 +159,7 @@ const Navbar = () => {
 
           <Box
             sx={{ flexGrow: 0 }}
-            onClick={() => setMode((prevState) => !prevState)}
+            onClick={() => toggleTheme((prevState) => !prevState)}
           >
             <Avatar alt="CheoR" src={avatar} />
           </Box>
