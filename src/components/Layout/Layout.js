@@ -15,9 +15,6 @@ const Layout = ({ pageTitle, children }) => {
           minHeight: "100vh",
         }}
       >
-        <Grid item>
-          <Navbar />
-        </Grid>
         <Grid item sx={{ flex: 1 }} mb={1}>
           <Container component="main">
             <Box mt={10}>
@@ -25,9 +22,6 @@ const Layout = ({ pageTitle, children }) => {
             </Box>
             {children}
           </Container>
-        </Grid>
-        <Grid item>
-          <Footer />
         </Grid>
       </Grid>
     </ToggleThemeProvider>
