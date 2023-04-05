@@ -1,22 +1,25 @@
 import React, { useContext, useState } from "react";
 // import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 // import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import AttractionsIcon from "@mui/icons-material/Attractions";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import MenuItem from "@mui/material/MenuItem";
-import Toolbar from "@mui/material/Toolbar";
-import AppBar from "@mui/material/AppBar";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import Box from "@mui/material/Box";
-import { Link } from "gatsby";
 
-import { ToggleThemeContext, ToggleThemeProvider } from "../../context/Theme";
+import AttractionsIcon from "@mui/icons-material/Attractions";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "gatsby";
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+
 import resume from "../../../assets/pdf/Cheo_Roman_Resume.pdf";
+import { ToggleThemeContext } from "../../context/Theme";
 import avatar from "../../../assets/images/self.png";
 import { PAGES } from "../../data/data";
 

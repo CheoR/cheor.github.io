@@ -1,6 +1,6 @@
 // // https://cimdalli.github.io/mui-theme-generator/
-import { createTheme } from "@mui/material/styles";
 import { useMemo, useState } from "react";
+import { createTheme } from "@mui/material/styles";
 import { colors } from "@mui/material";
 
 const getTheme = (isDark) => {

@@ -1,12 +1,10 @@
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import CssBaseline from "@mui/material/CssBaseline";
 import { Box } from "@mui/material";
 
-import Layout from "../../components/Layout/Layout";
+import { fsURL, fsEndpoint } from "../../data/data";
 import { SEO } from "../../components/SEO/SEO";
 import * as styles from "./contact.module.css";
-import { fsURL, fsEndpoint } from "../../data/data";
 
 const ContactPage = () => {
   const [state, handleSubmit] = useForm(fsEndpoint);

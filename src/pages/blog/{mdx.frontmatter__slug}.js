@@ -1,11 +1,9 @@
-import * as React from "react";
-import { graphql } from "gatsby";
+import React from "react";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
-import CssBaseline from "@mui/material/CssBaseline";
+import { graphql } from "gatsby";
 
-import Layout from "../../components/Layout/Layout";
-import { SEO } from "../../components/SEO/SEO";
 import { Box, Typography } from "@mui/material";
+import { SEO } from "../../components/SEO/SEO";
 
 const BlogPost = ({ data, children }) => {
   const { frontmatter: fm } = data.mdx;

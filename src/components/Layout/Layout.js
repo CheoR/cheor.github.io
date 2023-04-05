@@ -1,10 +1,7 @@
 import React from "react";
-
 import { Box, Container, Grid, Typography } from "@mui/material";
 
 import { ToggleThemeProvider } from "../../context/Theme";
-import Footer from "../Footer/Footer";
-import Navbar from "../Navbar/Navbar";
 // import "../global.css";
 
 const Layout = ({ pageTitle, children }) => {

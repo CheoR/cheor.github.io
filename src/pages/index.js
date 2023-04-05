@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
-import { ToggleThemeProvider } from "../context/Theme";
 import Gallery from "../components/Gallery/Gallery";
 import Card from "../components/Card/ProjectCard";
-import Layout from "../components/Layout/Layout";
 import { SEO } from "../components/SEO/SEO";
 import { PROJECTS } from "../data/data";
 
