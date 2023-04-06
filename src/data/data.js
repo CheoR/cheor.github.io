@@ -249,10 +249,10 @@ export const PAGES = [
     url: "/contact",
     page: "Contact",
   },
-  {
-    url: "/v1", // https://cheor.github.io/v1/",
-    page: "Portfolio V1",
-  },
+  // {
+  //   url: "/v1", // https://cheor.github.io/v1/",
+  //   page: "Portfolio V1",
+  // },
 ];
 
 export const SOCIALS = {

@@ -18,14 +18,14 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
+        background_color: `red`,
+        crossOrigin: `use-credentials`,
+        display: `standalone`,
         icon: "src/images/icon.png",
         name: `CheoR`,
         short_name: `CheoR`,
         start_url: `/`,
-        background_color: `red`,
         theme_color: `green`,
-        display: `standalone`,
-        crossOrigin: `use-credentials`,
       },
     },
     {
