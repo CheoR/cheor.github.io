@@ -3,9 +3,6 @@ import React, { createContext, useMemo, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline, colors } from "@mui/material";
 
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
-
 export const ToggleThemeContext = createContext();
 
 const _getTheme = (isDark) => {
@@ -63,9 +60,7 @@ export const ToggleThemeProvider = ({ children }) => {
     <ThemeProvider theme={theme}>
       <ToggleThemeContext.Provider value={{ theme, toggleTheme }}>
         <CssBaseline />
-        <Navbar />
         {children}
-        <Footer />
       </ToggleThemeContext.Provider>
     </ThemeProvider>
   );
