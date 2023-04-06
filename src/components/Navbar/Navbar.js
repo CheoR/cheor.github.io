@@ -25,8 +25,8 @@ import { PAGES } from "../../data/data";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
+  const { toggleTheme } = useContext(ToggleThemeContext);
   const [isDark, setIsDark] = useState(false); // theme.palette.mode doesn't toggle
-  const { theme, toggleTheme } = useContext(ToggleThemeContext);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
