@@ -1,93 +1,101 @@
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import { Box } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
+import { colors } from "@mui/material";
 
+// TODO: https://help.formspree.io/hc/en-us/articles/6389157477907-Using-a-custom-reCAPTCHA-with-Formspree-React
 import { fsURL, fsEndpoint } from "../../data/data";
 import { SEO } from "../../components/SEO/SEO";
-import * as styles from "./contact.module.css";
 
 const ContactPage = () => {
   const [state, handleSubmit] = useForm(fsEndpoint);
   if (state.succeeded) {
     return (
       <Box>
-        <p>Thanks you for your request!</p>
+        <Typography textAlign="center" variant="h3">
+          Thank you for your request!
+        </Typography>
       </Box>
     );
   }
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "center" }}>
-      <form
-        // className={styles.main__form}
-        id="fs-frm"
-        name="simple-contact-form"
-        acceptCharset="utf-8"
-        action={`${fsURL}${fsEndpoint}`}
-        method="POST"
-        onSubmit={handleSubmit}
-      >
-        <fieldset className={styles.main__form__fieldset}>
-          <label className={styles.main__form_label} htmlFor="inputName">
-            name
-          </label>
-          <input
-            className={styles.main__form_input}
-            name="inputName"
-            id="inputName"
-            type="text"
-            placeholder="First and Last"
-          />
-          <ValidationError
-            prefix="Name"
-            field="inputName"
-            errors={state.errors}
-          />
+    <Box
+      acceptCharset="utf-8"
+      action={`${fsURL}${fsEndpoint}`}
+      component="form"
+      method="POST"
+      id="fs-frm"
+      name="simple-contact-form"
+      onSubmit={handleSubmit}
+      my="25%"
+      sx={{
+        background: colors.grey[400],
+        borderRadius: 4,
+        maxWidth: { md: "50%" },
+        marginX: {
+          md: "25%",
+        },
+      }}
+    >
+      <TextField
+        fullWidth
+        hiddenLabel
+        id="inputName"
+        placeholder="Normal"
+        name="inputName"
+        type="text"
+        variant="filled"
+      />
+      <ValidationError prefix="Name" field="inputName" errors={state.errors} />
+      <TextField
+        fullWidth
+        hiddenLabel
+        id="inputEmail"
+        placeholder="Name@Domain.com"
+        name="inputEmail"
+        type="email"
+        variant="filled"
+      />
+      <ValidationError
+        prefix="Email"
+        field="inputEmail"
+        errors={state.errors}
+      />
 
-          <label className={styles.main__form_label} htmlFor="inputEmail">
-            email
-          </label>
-          <input
-            className={styles.main__form_input}
-            name="inputEmail"
-            id="inputEmail"
-            type="email"
-            placeholder="name@domain.com"
-          />
-          <ValidationError prefix="Email" field="email" errors={state.errors} />
-
-          <label className={styles.main__form_label} htmlFor="inputMsg">
-            message
-          </label>
-          <textarea
-            className={styles.main__form_textarea}
-            name="inputMsg"
-            id="inputMsg"
-            required=""
-            placeholder="Hey!"
-          ></textarea>
-          <ValidationError
-            prefix="Message"
-            field="inputMsg"
-            errors={state.errors}
-          />
-
-          <input
-            id="email-subject"
-            type="text"
-            name="_gotcha"
-            className={styles.moocow}
-          />
-        </fieldset>
-
-        <button
-          className={styles.main__form_submit}
-          type="submit"
+      <TextField
+        fullWidth
+        id="standard-multiline-static"
+        hiddenLabel
+        multiline
+        rows={4}
+        placeholder="Message"
+        // variant="filled" // breaks look for some reason
+      />
+      <ValidationError
+        prefix="Message"
+        field="inputMsg"
+        errors={state.errors}
+      />
+      <TextField
+        fullWidth
+        hiddenLabel
+        id="oinkoink"
+        name="moocow"
+        tabindex="-1"
+        type="text"
+        sx={{ position: "absolute", left: "-99999px" }}
+      />
+      <Box display="flex" justifyContent="center">
+        <Button
           disabled={state.submitting}
+          size="large"
+          type="submit"
+          variant="contained"
         >
           Submit
-        </button>
-      </form>
+        </Button>
+      </Box>
     </Box>
   );
 };
