@@ -54,7 +54,7 @@ const _getTheme = (isDark) => {
 };
 
 export const ToggleThemeProvider = ({ children }) => {
-  const [mode, toggleTheme] = useState(false);
+  const [mode, toggleTheme] = useState(true);
   const theme = useMemo(() => _getTheme(mode), [mode]);
   return (
     <ThemeProvider theme={theme}>
