@@ -89,4 +89,4 @@ const AboutPage = () => {
 export default AboutPage;
 
 // eslint-disable-next-line
-export const Head = () => <SEO title="About" description="About Page" />;
+export const Head = () => <SEO title="About Cheo" description="About Page" />;

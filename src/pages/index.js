@@ -44,4 +44,4 @@ function Home() {
 export default Home;
 
 // eslint-disable-next-line
-export const Head = () => <SEO title="Home" description="Home Page" />;
+export const Head = () => <SEO title="Home" description="Cheo's Home Page" />;
