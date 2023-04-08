@@ -69,12 +69,23 @@ const Gallery = ({ data, chips, filterChips, filterSearch, Card }) => {
       </Grid>
       <Grid
         container
+        display="flex"
+        flexWrap="wrap"
         sx={{
-          display: "flex",
-          justifyContent: "space-evenly",
+          justifyContent: {
+            xs: "center",
+            sm: "space-evenly",
+            lg: "left",
+          },
+          gap: {
+            xs: 2,
+            sm: 3,
+          },
+          p: {
+            xs: 2,
+            sm: 3,
+          },
         }}
-        gap={1}
-        p={1}
       >
         {data.length > 0 ? (
           data.map((obj) => (
