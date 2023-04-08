@@ -73,4 +73,4 @@ export const query = graphql`
 export default Blog;
 
 // eslint-disable-next-line
-export const Head = () => <SEO title="Blogs" description="Blogs Page" />;
+export const Head = () => <SEO title="My Ramblings" description="Blogs Page" />;

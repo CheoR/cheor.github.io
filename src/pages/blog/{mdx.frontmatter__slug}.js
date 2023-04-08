@@ -2,15 +2,12 @@ import React from "react";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import { SEO } from "../../components/SEO/SEO";
 
 const BlogPost = ({ data, children }) => {
   const { frontmatter: fm } = data.mdx;
   const image = getImage(fm.hero_image);
-
-  console.log("blog stuff");
-  console.log(fm);
 
   return (
     <Box>
@@ -25,7 +22,16 @@ const BlogPost = ({ data, children }) => {
       <Box component="p" align="center">
         <Typography variant="caption">
           Photo Credit:{" "}
-          <a href={fm.hero_image_credit_link}>{fm.hero_image_credit_text}</a>
+          <Link
+            aria-label={fm.hero_image_credit_text}
+            color="inherit"
+            href={fm.hero_image_credit_link}
+            rel="noreferrer"
+            target="_blank"
+            underline="hover"
+          >
+            {fm.hero_image_credit_text}
+          </Link>
         </Typography>
       </Box>
       <Typography variant="subtitle2">{fm.datePublished}</Typography>
