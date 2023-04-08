@@ -11,6 +11,7 @@ import {
   Grid,
   TextField,
   Typography,
+  InputAdornment,
 } from "@mui/material";
 
 const Gallery = ({ data, chips, filterChips, filterSearch, Card }) => {
@@ -18,24 +19,32 @@ const Gallery = ({ data, chips, filterChips, filterSearch, Card }) => {
 
   return (
     <Grid>
-      <Grid
-        item
-        sx={{
-          display: "flex",
-          alignItems: "flex-end",
-        }}
-        px={3}
-      >
-        <TextField
-          label="Search"
-          sx={{ width: "100%", alignText: "right" }}
-          variant="standard"
-          value={inputField.value}
-          onChange={(e) => filterSearch(e.target.value)}
-        />
-        <SearchIcon />
-      </Grid>
-      <Grid item px={3}>
+      <Grid item>
+        <Grid
+          item
+          sx={{
+            display: "flex",
+            alignItems: "flex-end",
+          }}
+        >
+          <TextField
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
+            label="Search"
+            // not
+            // working
+            // w="100%"
+            sx={{ width: "100%" }}
+            variant="standard"
+            value={inputField.value}
+            onChange={(e) => filterSearch(e.target.value)}
+          />
+        </Grid>
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
