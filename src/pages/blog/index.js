@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 
 import Gallery from "../../components/Gallery/Gallery";
@@ -7,38 +7,17 @@ import { SEO } from "../../components/SEO/SEO";
 
 const Blog = ({ data: _data }) => {
   const BLOGS = _data.allMdx.nodes;
-  const [data, setData] = useState(BLOGS);
-  const chips = [
-    "All",
-    ...new Set(BLOGS.map((blog) => blog.frontmatter.tags).flat(1)),
-  ];
-
-  const filterChips = (chip) => {
-    if (chip === "All") {
-      setData(BLOGS);
-    } else {
-      setData(() => BLOGS.filter((obj) => obj.frontmatter.tags.includes(chip)));
-    }
-  };
-
-  const filterSearch = (searchTerm) => {
-    if (!searchTerm) setData(BLOGS);
-    setData(() =>
+  const filters = {
+    search: (searchTerm) =>
       BLOGS.filter((obj) =>
         obj.body.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-    );
+      ),
+    select: (tag) =>
+      BLOGS.filter((blog) => blog.frontmatter.tags.includes(tag)),
+    tags: ["All", ...new Set(BLOGS.flatMap((blog) => blog.frontmatter.tags))],
   };
 
-  return (
-    <Gallery
-      data={data}
-      chips={chips}
-      filterChips={filterChips}
-      filterSearch={filterSearch}
-      Card={Card}
-    />
-  );
+  return <Gallery data={BLOGS} filters={filters} Card={Card} />;
 };
 
 export const query = graphql`
