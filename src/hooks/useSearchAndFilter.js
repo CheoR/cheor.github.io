@@ -1,20 +1,23 @@
 import { useState } from "react";
 
-const useSearch = (initialValue, filterByTerm) => {
-  const [value, setFilter] = useState(initialValue);
+const useSearchAndFilter = ({ data: initialData, filters }) => {
+  const [data, setData] = useState(initialData);
+  const tags = filters.tags;
 
-  const setValue = (searchTerm) => {
-    if (!searchTerm) {
-      setFilter(initialValue);
-    }
-    const filtered = filterByTerm(searchTerm);
-    if (filtered.length) {
-      setFilter(filtered);
+  const filterByTag = (tag) => {
+    if (tag === "All") {
+      setData(initialData);
     } else {
-      setFilter([]);
+      setData(() => filters.select(tag));
     }
   };
-  return [value, setValue];
+
+  const filterBySearch = (searchTerm) => {
+    if (!searchTerm) setData(initialData);
+    setData(() => filters.search(searchTerm));
+  };
+
+  return { cards: data, search: filterBySearch, select: filterByTag, tags };
 };
 
-export default useSearch;
+export default useSearchAndFilter;
