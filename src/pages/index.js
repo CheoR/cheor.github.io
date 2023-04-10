@@ -1,44 +1,20 @@
-import React, { useState } from "react";
-
+import React from "react";
 import Gallery from "../components/Gallery/Gallery";
 import Card from "../components/Card/ProjectCard";
 import { SEO } from "../components/SEO/SEO";
 import { PROJECTS } from "../data/data";
 
-const chips = [
-  "All",
-  ...new Set(PROJECTS.map((project) => project.tags).flat(1)),
-];
+const filters = {
+  search: (searchTerm) =>
+    PROJECTS.filter((project) =>
+      project.description.toLowerCase().includes(searchTerm?.toLowerCase())
+    ),
+  select: (tag) => PROJECTS.filter((project) => project.tags.includes(tag)),
+  tags: ["All", ...new Set(PROJECTS.flatMap((project) => project.tags))],
+};
 
 function Home() {
-  const [data, setData] = useState(PROJECTS);
-
-  const filterChips = (chip) => {
-    if (chip === "All") {
-      setData(PROJECTS);
-    } else {
-      setData(() => PROJECTS.filter((obj) => obj.tags.includes(chip)));
-    }
-  };
-
-  const filterSearch = (searchTerm) => {
-    if (!searchTerm) setData(PROJECTS);
-    setData(() =>
-      PROJECTS.filter((obj) =>
-        obj.description.toLowerCase().includes(searchTerm?.toLowerCase())
-      )
-    );
-  };
-
-  return (
-    <Gallery
-      data={data}
-      chips={chips}
-      filterChips={filterChips}
-      filterSearch={filterSearch}
-      Card={Card}
-    />
-  );
+  return <Gallery data={PROJECTS} filters={filters} Card={Card} />;
 }
 
 export default Home;
