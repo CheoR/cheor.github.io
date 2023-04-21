@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-
 import AttractionsIcon from "@mui/icons-material/Attractions";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "gatsby";
@@ -28,87 +27,89 @@ const Navbar = () => {
   const { toggleTheme } = useContext(ToggleThemeContext);
   const [isDark, setIsDark] = useState(false); // theme.palette.mode doesn't toggle
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+  const handleOpenNavMenu = (event) => setAnchorElNav(event.currentTarget);
+  const handleCloseNavMenu = () => setAnchorElNav(null);
 
   return (
     <AppBar>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AttractionsIcon
-            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-          />
+          <Box mr={1} sx={{ flexGrow: 0 }}>
+            <Avatar alt="CheoR" src={avatar} />
+          </Box>
           <Typography
-            variant="h6"
+            component={Link}
             noWrap
-            component="a"
             sx={{
-              mr: 2,
+              color: "inherit",
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              mr: 2,
               textDecoration: "none",
             }}
+            to="/"
+            variant="h6"
           >
-            <Link to="/">CheoR</Link>
+            CheoR
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
-              size="large"
-              aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
+              aria-label="account of current user"
               color="inherit"
+              onClick={handleOpenNavMenu}
+              size="large"
             >
               <MenuIcon />
             </IconButton>
 
             {/* mobile view */}
             <Menu
-              id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
                 horizontal: "left",
               }}
+              id="menu-appbar"
               keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: "block", md: "none" },
               }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
             >
               {PAGES.map((obj) => (
                 <MenuItem key={obj.page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
-                    <Link to={obj.url}>{obj.page}</Link>
+                  <Typography
+                    component={Link}
+                    sx={{
+                      textAlign: "center",
+                      textDecoration: "none",
+                    }}
+                    to={obj.url}
+                  >
+                    {obj.page}
                   </Typography>
                 </MenuItem>
               ))}
               <MenuItem key={"Resume"} onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">
-                  <Link
-                    href={resume}
-                    aria-label="Download Resume"
-                    rel="noreferrer"
-                    target="_blank"
-                    download=""
-                  >
-                    Resume
-                  </Link>
+                <Typography
+                  aria-label="Download Resume"
+                  component={Link}
+                  download=""
+                  href={resume}
+                  rel="noreferrer"
+                  sx={{ textAlign: "center", textDecoration: "none" }}
+                  target="_blank"
+                >
+                  Resume
                 </Typography>
               </MenuItem>
             </Menu>
@@ -117,52 +118,60 @@ const Navbar = () => {
             sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
           />
           <Typography
-            variant="h5"
+            component={Link}
             noWrap
-            component="a"
             sx={{
-              mr: 2,
+              color: "inherit",
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              mr: 2,
               textDecoration: "none",
             }}
+            to="/"
+            variant="h5"
           >
-            <Link to="/">CheoR</Link>
+            CheoR
           </Typography>
           {/* tablet/desktops */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {PAGES.map((obj) => (
               <Button
+                component={Link}
                 key={obj.page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  color: "white",
+                  display: "block",
+                  my: 2,
+                  textDecoration: "none",
+                }}
+                to={obj.url}
+                variant="h6"
               >
-                <Link to={obj.url}>{obj.page}</Link>
+                {obj.page}
               </Button>
             ))}
             <Button
+              aria-label="Download Resume"
+              component={Link}
+              download=""
+              href={resume}
               key="Resume"
               onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
+              rel="noreferrer"
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                textDecoration: "none",
+              }}
+              target="_blank"
             >
-              <Link
-                href={resume}
-                aria-label="Download Resume"
-                rel="noreferrer"
-                target="_blank"
-                download=""
-              >
-                Resume
-              </Link>
+              Resume
             </Button>
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Avatar alt="CheoR" src={avatar} />
           </Box>
           <Box
             p={1}
