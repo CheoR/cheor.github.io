@@ -32,7 +32,7 @@ const ContactPage = () => {
       sx={{
         background: colors.grey[400],
         borderRadius: 4,
-        maxWidth: { md: "50%" },
+        maxWidth: { md: "40%" },
         marginX: {
           md: "25%",
         },
@@ -42,7 +42,7 @@ const ContactPage = () => {
         fullWidth
         hiddenLabel
         id="inputName"
-        placeholder="Normal"
+        placeholder="Name"
         name="inputName"
         type="text"
         variant="filled"
