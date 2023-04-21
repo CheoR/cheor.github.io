@@ -5,7 +5,7 @@ import CardLayout from "../Layout/Gallery";
 import SearchBar from "./SearchBar";
 import ChipBar from "./ChipBar";
 
-function Gallery({ data, filters, Card }) {
+function Gallery({ data, filters }) {
   const { cards, search, select, tags } = useSearchAndFilter({
     data,
     filters,
@@ -15,7 +15,7 @@ function Gallery({ data, filters, Card }) {
     <>
       <SearchBar search={search} />
       <ChipBar select={select} tags={tags} />
-      <CardLayout data={cards} Card={Card} />
+      <CardLayout data={cards} />
     </>
   );
 }

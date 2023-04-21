@@ -2,7 +2,6 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Gallery from "../../components/Gallery/Gallery";
-import Card from "../../components/Card/BlogCard";
 import { SEO } from "../../components/SEO/SEO";
 
 const Blog = ({ data: _data }) => {
@@ -17,7 +16,7 @@ const Blog = ({ data: _data }) => {
     tags: ["All", ...new Set(BLOGS.flatMap((blog) => blog.frontmatter.tags))],
   };
 
-  return <Gallery data={BLOGS} filters={filters} Card={Card} />;
+  return <Gallery data={BLOGS} filters={filters} />;
 };
 
 export const query = graphql`

@@ -1,6 +1,5 @@
 import React from "react";
 import Gallery from "../components/Gallery/Gallery";
-import Card from "../components/Card/ProjectCard";
 import { SEO } from "../components/SEO/SEO";
 import { PROJECTS } from "../data/data";
 
@@ -14,7 +13,7 @@ const filters = {
 };
 
 function Home() {
-  return <Gallery data={PROJECTS} filters={filters} Card={Card} />;
+  return <Gallery data={PROJECTS} filters={filters} />;
 }
 
 export default Home;

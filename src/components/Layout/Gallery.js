@@ -1,7 +1,8 @@
-import { Box, Grid } from "@mui/material";
 import React from "react";
+import { Box, Grid } from "@mui/material";
+import Card from "../Card/Card";
 
-export default function Gallery({ data, Card }) {
+export default function Gallery({ data }) {
   return (
     <Grid
       container
