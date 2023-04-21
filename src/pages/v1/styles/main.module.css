@@ -92,6 +92,12 @@ textarea {
   border-bottom: 0.5rem solid black;
 } */
 
+.info__section,
+.gallery,
+.gallery__project__link {
+	background: 'none';
+}
+
 .main,
 .header,
 .info {
