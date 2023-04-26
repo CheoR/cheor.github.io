@@ -56,7 +56,10 @@ function Image(props) {
   return (
     <img
       alt={props.data.alt}
-      src={props.data.image || "https://picsum.photos/640/360"}
+      src={
+        props.data.image ||
+        "https://placehold.co/300x200.png?text=🙂&font=roboto"
+      } // "https://picsum.photos/640/360"}
       style={{ maxHeight: 64, objectFit: "cover" }}
       // loading="lazy"
     />
