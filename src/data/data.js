@@ -243,6 +243,7 @@ export const PAGES = [
 
 export const PROJECTS = [
   {
+    alt: "GitHub Project: Pack It UP V2",
     aria: "GitHub Project: PackItUpV2",
     description:
       "PackItUpV2 is a mobile app version of PackItUp, moving/inventory app that helps users track what they pack. ",
@@ -262,6 +263,7 @@ export const PROJECTS = [
     title: "PackItUpV2",
   },
   {
+    alt: "GitHub Project: Ship It Out",
     aria: "GitHub Project: Ship It Out",
     description:
       "ShipItOut is my full stack NSS C46 capstone project. It is related to my initial project, PackItUp. ShipItOut consist of React front-end and Django backend. It is a dashboard-like app that tracks shipping containers where the shipper, container, port authorities can update the container status as it moves. ",
@@ -273,17 +275,19 @@ export const PROJECTS = [
     title: "ShipItOut",
   },
   {
+    alt: "GitHub Project: Pack It Up",
     aria: "GitHub Project: Pack It Up",
     description:
       "NSS front-end capstone project. PackItUp is a moving app to help users keep track of what items went into what box for moving/storage. ",
     id: "c6409e2a-8f85-4141-b6fc-1c08315ffb98",
     link: "https://cr-demo--packitup.netlify.app/",
-    preview: "https://github.com/CheoR/pack-it-up",
+    preview: "",
     repo: "https://github.com/CheoR/pack-it-up",
     tags: ["React"],
     title: "PackItUp",
   },
   {
+    alt: "GitHub Project: Beer Me",
     aria: "GitHub Project: Beer Me",
     description:
       "TDD project with React Frontend and Django backend. Testing done with Jest/Enzyme and Selenium. ",
@@ -295,6 +299,7 @@ export const PROJECTS = [
     title: "BeerMe",
   },
   {
+    alt: "GitHub Project: Wine Recommender",
     aria: "GitHub Project: Wine Recommender",
     description:
       "Wine recommender k-means clustering to recommend wines based on user preferences and previous wine scores. This project uses TDD approach, Django backend and Travis-CI for deployment. ",
@@ -306,6 +311,7 @@ export const PROJECTS = [
     title: "Wine Recommender",
   },
   // {
+  // alt: "GitHub Project: Free Code Camp Projects",
   //   aria: "GitHub Project: Free Code Camp Projects",
   //   description:
   //     "FreeCodeCamp projects using HTML, CSS, React, Bootstrap and JavaScript. ",
@@ -317,6 +323,7 @@ export const PROJECTS = [
   //   tags: ["CSS", "HTML", "JavaScript"],
   // },
   // {
+  // alt: "GitHub Project: Code Pen Projects",
   //   aria: "GitHub Project: Code Pen Projects",
   //   id: "de5fad68-95eb-4b5c-9d15-af576b845280",
   //   description: "Pens",
