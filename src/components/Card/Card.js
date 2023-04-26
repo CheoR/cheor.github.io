@@ -1,5 +1,5 @@
 import React from "react";
-import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import {
   Box,
@@ -20,41 +20,60 @@ function Buttons(props) {
     <>
       <Button
         size="small"
-        href={props.data.link}
-        target="_blank"
-        rel="noopener"
-      >
-        demo
-      </Button>
-      <Button
-        size="small"
         href={props.data.repo}
         target="_blank"
         rel="noopener"
       >
         gitHub
       </Button>
+      {props.data.link && (
+        <Button
+          size="small"
+          href={props.data.link}
+          target="_blank"
+          rel="noopener"
+        >
+          demo
+        </Button>
+      )}
     </>
   );
 }
 
+function Image(props) {
+  if (props.data?.frontmatter) {
+    const image = getImage(props.data?.frontmatter.hero_image);
+    // return <StaticImage alt={props.data.alt} src={image} />;
+    return (
+      <GatsbyImage
+        alt={props.data.alt}
+        image={image}
+        style={{ maxHeight: 64, objectFit: "scale-down" }}
+      />
+    );
+  }
+
+  return (
+    <img
+      alt={props.data.alt}
+      src={props.data.image || "https://picsum.photos/640/360"}
+      style={{ maxHeight: 64, objectFit: "cover" }}
+      // loading="lazy"
+    />
+  );
+}
+
 function CardD(props) {
-  let alt;
   let description;
-  let image;
   let title;
   let tags;
 
   if (props.data?.frontmatter) {
-    image = getImage(props.data?.frontmatter.hero_image);
     description = props.data?.body;
-    alt = props.data?.frontmatter.hero_image_alt;
     tags = props.data?.frontmatter.tags.sort();
     title = props.data?.frontmatter.title;
   } else {
-    alt = props.data.description;
     description = props.data.description;
-    image = props.data.preview;
     tags = props.data?.tags.sort();
     title = props.data.title;
   }
@@ -69,7 +88,7 @@ function CardD(props) {
         width: 345,
       }}
     >
-      <GatsbyImage image={image} alt={alt} />
+      <Image data={props.data} />
       <CardContent
         sx={{
           height: 250,
@@ -86,7 +105,7 @@ function CardD(props) {
           <Grid item>
             <Box>
               <Typography gutterBottom variant="h5" component="div">
-                {title}
+                {title.slice(0, 28)}
               </Typography>
             </Box>
           </Grid>
