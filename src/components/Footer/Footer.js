@@ -8,71 +8,78 @@ import { SOCIALS } from "../../data/data";
 
 const Footer = () => {
   return (
-    <Box component="footer" sx={{ background: "rgb(197, 206, 219)" }}>
-      <Grid container>
-        <Grid item xs={12}>
-          <Typography
-            variant="h6"
-            noWrap
-            sx={{
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 400,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-              textAlign: "center",
-            }}
-          >
-            Let's Connect!
-          </Typography>
-        </Grid>
-        <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <IconButton
-              href={SOCIALS.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkedInIcon fontSize="large" />
-            </IconButton>
-            <IconButton
-              href={SOCIALS.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitHubIcon fontSize="large" />
-            </IconButton>
-          </Box>
-        </Grid>
-        <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
-          <Typography
-            variant="h6"
-            noWrap
-            sx={{
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 400,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-              height: "100%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            &copy; CheoR {new Date().getFullYear().toString()}
-          </Typography>
-        </Grid>
+    <Grid
+      component="footer"
+      container
+      sx={{ background: "rgb(197, 206, 219)" }}
+    >
+      <Grid item xs={12}>
+        <Typography
+          variant="h6"
+          noWrap
+          sx={{
+            flexGrow: 1,
+            fontFamily: "monospace",
+            fontWeight: 400,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+            textAlign: "center",
+          }}
+        >
+          Let's Connect!
+        </Typography>
       </Grid>
-    </Box>
+      <Grid
+        item
+        sx={{
+          display: "flex",
+          justifyContent: {
+            xs: "space-between",
+            md: "center",
+          },
+          width: "100%",
+        }}
+      >
+        <Typography
+          variant="h7"
+          noWrap
+          sx={{
+            fontFamily: "monospace",
+            fontWeight: 400,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          &copy; CheoR {new Date().getFullYear().toString()}
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+          }}
+        >
+          <IconButton
+            href={SOCIALS.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedInIcon fontSize="small" />
+          </IconButton>
+          <IconButton
+            href={SOCIALS.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHubIcon fontSize="small" />
+          </IconButton>
+        </Box>
+      </Grid>
+    </Grid>
   );
 };
 
