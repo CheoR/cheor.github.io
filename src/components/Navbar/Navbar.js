@@ -136,14 +136,18 @@ const Navbar = () => {
             CheoR
           </Typography>
           {/* tablet/desktops */}
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+            }}
+          >
             {PAGES.map((obj) => (
               <Button
                 component={Link}
                 key={obj.page}
                 onClick={handleCloseNavMenu}
                 sx={{
-                  color: "white",
                   display: "block",
                   my: 2,
                   textDecoration: "none",
@@ -163,9 +167,9 @@ const Navbar = () => {
               onClick={handleCloseNavMenu}
               rel="noreferrer"
               sx={{
-                my: 2,
-                color: "white",
+                color: "inherit",
                 display: "block",
+                my: 2,
                 textDecoration: "none",
               }}
               target="_blank"
