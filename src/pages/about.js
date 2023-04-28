@@ -72,6 +72,7 @@ const AboutPage = () => {
               <Box
                 alt={img.alt}
                 component="img"
+                loading="lazy"
                 src={img.icon}
                 sx={{
                   maxHeight: { xs: 30, md: 40 },
