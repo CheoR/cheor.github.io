@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Link, Typography } from "@mui/material";
 
 import { SEO } from "../components/SEO/SEO";
-import { ICONS } from "../data/data";
+import { TECH } from "../data/data";
 
 const AboutPage = () => {
   return (
@@ -61,7 +61,7 @@ const AboutPage = () => {
         //     justifyContent: "center",
         //   }}
         >
-          {ICONS.map((img) => (
+          {TECH.map((img) => (
             <Link
               aria-label={img.alt}
               href={img.href}
@@ -72,7 +72,7 @@ const AboutPage = () => {
               <Box
                 alt={img.alt}
                 component="img"
-                src={img.src}
+                src={img.icon}
                 sx={{
                   maxHeight: { xs: 30, md: 40 },
                   maxWidth: { xs: 30, md: 40 },
