@@ -8,14 +8,14 @@ export const TECH = [
     long: "GraphQl",
     short: "GQL",
   },
-  {
-    alt: "java",
-    href: "https://www.java.com/en/",
-    icon: "https://cdn.worldvectorlogo.com/logos/java-4.svg",
-    order: 1,
-    long: "Java",
-    short: "JAVA",
-  },
+  // {
+  //   alt: "java",
+  //   href: "https://www.java.com/en/",
+  //   icon: "https://cdn.worldvectorlogo.com/logos/java-4.svg",
+  //   order: 1,
+  //   long: "Java",
+  //   short: "JAVA",
+  // },
   {
     alt: "javascript",
     href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
@@ -85,10 +85,18 @@ export const TECH = [
   {
     alt: "express",
     href: "https://expressjs.com/",
-    icon: "https://www.vectorlogo.zone/util/preview.html?image=/logos/expressjs/expressjs-icon.svg",
+    icon: "https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg",
     long: "Express",
     order: 2,
     short: "EX",
+  },
+  {
+    alt: "flask",
+    href: "https://flask.palletsprojects.com/en/2.3.x/",
+    icon: "https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg",
+    long: "Flask",
+    order: 2,
+    short: "flask",
   },
   {
     alt: "django",
