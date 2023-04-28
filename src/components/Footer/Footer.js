@@ -39,6 +39,7 @@ const Footer = () => {
             md: "center",
           },
           width: "100%",
+          px: 2,
         }}
       >
         <Typography
@@ -47,12 +48,11 @@ const Footer = () => {
           sx={{
             fontFamily: "monospace",
             fontWeight: 400,
-            letterSpacing: ".3rem",
+            letterSpacing: ".1rem",
             color: "inherit",
             textDecoration: "none",
             height: "100%",
             display: "flex",
-            justifyContent: "center",
             alignItems: "center",
           }}
         >
