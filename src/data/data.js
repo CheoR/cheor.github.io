@@ -346,7 +346,7 @@ export const PROJECTS = [
       "NSS front-end capstone project. PackItUp is a moving app to help users keep track of what items went into what box for moving/storage. ",
     id: "c6409e2a-8f85-4141-b6fc-1c08315ffb98",
     link: "https://cr-demo--packitup.netlify.app/",
-    preview: "",
+    preview: "https://github.com/CheoR/pack-it-up",
     repo: "https://github.com/CheoR/pack-it-up",
     tags: ["React"],
     title: "PackItUp",

@@ -54,14 +54,35 @@ function Image(props) {
   }
 
   return (
+    // <StaticImage
+    //   src={props.data.preview}
+    //   alt={props.data.alt}
+    //   style={{
+    //     height: 64,
+    //     objectFit: "cover",
+    //     textAlign: "center",
+    //     justifyContent: "center",
+    //     alignItems: "center",
+    //     display: "flex",
+    //   }}
+    //   loading="lazy"
+    // />
     <img
       alt={props.data.alt}
-      src={
-        props.data.image ||
-        "https://placehold.co/300x200.png?text=🙂&font=roboto"
-      } // "https://picsum.photos/640/360"}
-      style={{ maxHeight: 64, objectFit: "cover" }}
-      // loading="lazy"
+      src={props.data.preview || "https://picsum.photos/640/360"}
+      // src={
+      //   props.data.preview ||
+      //   "https://placehold.co/300x200.png?text=🙂&font=roboto"
+      // } // "https://picsum.photos/640/360"}
+      style={{
+        height: 64,
+        objectFit: "cover",
+        textAlign: "center",
+        justifyContent: "center",
+        alignItems: "center",
+        display: "flex",
+      }}
+      loading="lazy"
     />
   );
 }
