@@ -22,7 +22,7 @@ function ChipBar({ select, tags }) {
       <AccordionDetails
         sx={{
           display: "flex",
-          justifyContent: "flex-start",
+          justifyContent: "center",
           flexWrap: "wrap",
           gap: 1,
         }}
@@ -33,7 +33,10 @@ function ChipBar({ select, tags }) {
               key={chip}
               label={chip}
               variant="outlined"
-              sx={{ border: "2px solid rgb(25, 118, 210)" }}
+              sx={{
+                border: "2px solid rgb(25, 118, 210)",
+                width: "120px",
+              }}
               clickable={true}
               onClick={() => select(chip)}
             />
