@@ -1,14 +1,11 @@
 import React from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 
-import { ToggleThemeProvider } from "../../context/Theme";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-// import "../global.css";
 
 const Layout = ({ pageTitle, children }) => {
   return (
-    <ToggleThemeProvider>
       <Grid
         container
         sx={{
@@ -33,7 +30,6 @@ const Layout = ({ pageTitle, children }) => {
           <Footer />
         </Grid>
       </Grid>
-    </ToggleThemeProvider>
   );
 };
 
