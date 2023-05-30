@@ -1,5 +1,5 @@
 import React from "react";
-import { useSiteMetadata } from "../../hooks/use-site-metadata";
+import { useSiteMetadata } from "../hooks/use-site-metadata";
 
 export const SEO = ({
   title,

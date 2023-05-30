@@ -2,6 +2,9 @@ import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { Link } from "gatsby";
 
+import Layout from "../components/Layout";
+import { SEO } from "../components/SEO";
+
 const NotFoundPage = () => {
   return (
     <Box component="main">

@@ -5,7 +5,8 @@ import { colors } from "@mui/material";
 
 // TODO: https://help.formspree.io/hc/en-us/articles/6389157477907-Using-a-custom-reCAPTCHA-with-Formspree-React
 import { fsURL, fsEndpoint } from "../../data/data";
-import { SEO } from "../../components/SEO/SEO";
+import { SEO } from "../../components/SEO";
+import Layout from "../../components/Layout";
 
 const ContactPage = () => {
   const [state, handleSubmit] = useForm(fsEndpoint);

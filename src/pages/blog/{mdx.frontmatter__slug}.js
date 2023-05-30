@@ -3,7 +3,8 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 
 import { Box, Link, Typography } from "@mui/material";
-import { SEO } from "../../components/SEO/SEO";
+import { SEO } from "../../components/SEO";
+import Layout from "../../components/Layout";
 
 const BlogPost = ({ data, children }) => {
   const { frontmatter: fm } = data.mdx;

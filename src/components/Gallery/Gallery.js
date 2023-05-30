@@ -4,7 +4,7 @@ import { Box, Grid } from "@mui/material";
 import useSearchAndFilter from "../../hooks/useSearchAndFilter";
 import SearchBar from "./SearchBar";
 import ChipBar from "./ChipBar";
-import Card from "../Card/Card";
+import Card from "../Card";
 
 function Gallery({ data, filters }) {
   const { cards, search, select, tags } = useSearchAndFilter({

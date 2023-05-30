@@ -1,7 +1,8 @@
 import React from "react";
 import { Box, Link, Typography } from "@mui/material";
 
-import { SEO } from "../components/SEO/SEO";
+import { SEO } from "../components/SEO";
+import Layout from "../components/Layout"
 import { TECH } from "../data/data";
 
 const AboutPage = () => {

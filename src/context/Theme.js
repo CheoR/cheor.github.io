@@ -1,7 +1,7 @@
 // // https://cimdalli.github.io/mui-theme-generator/
 import React, { createContext, useMemo, useState } from "react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { CssBaseline, colors } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
+import { colors } from "@mui/material";
 
 export const ToggleThemeContext = createContext();
 

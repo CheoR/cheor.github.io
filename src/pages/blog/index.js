@@ -2,7 +2,8 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Gallery from "../../components/Gallery/Gallery";
-import { SEO } from "../../components/SEO/SEO";
+import Layout from "../../components/Layout";
+import { SEO } from "../../components/SEO";
 
 const Blog = ({ data: _data }) => {
   const BLOGS = _data.allMdx.nodes;

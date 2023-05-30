@@ -17,10 +17,10 @@ import {
   Typography,
 } from "@mui/material";
 
-import resume from "../../../assets/pdf/Cheo_Roman_Resume.pdf";
-import { ToggleThemeContext } from "../../context/Theme";
-import avatar from "../../../assets/images/self.png";
-import { PAGES } from "../../data/data";
+import resume from "../../assets/pdf/Cheo_Roman_Resume.pdf";
+import { ToggleThemeContext } from "../context/Theme";
+import avatar from "../../assets/images/self.png";
+import { PAGES } from "../data/data";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);

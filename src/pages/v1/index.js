@@ -6,7 +6,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 
-import { SEO } from "../../components/SEO/SEO";
+import { SEO } from "../../components/SEO";
 
 import imgSelf from "../../../assets/images/self.png";
 import resume from "../../..//assets/pdf/Cheo_Roman_Resume.pdf";

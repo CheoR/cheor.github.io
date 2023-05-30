@@ -1,7 +1,8 @@
 import React from "react";
 import Gallery from "../components/Gallery/Gallery";
-import { SEO } from "../components/SEO/SEO";
+import { SEO } from "../components/SEO";
 import { PROJECTS } from "../data/data";
+import Layout from "../components/Layout";
 
 const filters = {
   search: (searchTerm) =>
