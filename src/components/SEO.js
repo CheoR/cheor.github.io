@@ -32,6 +32,11 @@ export const SEO = ({
       <meta name="description" content={seo.description} />
       <meta name="keywords" content={seo.keywords} />
       <meta name="viewport" content="initial-scale=1, width=device-width" />
+      <meta name="image" content={seo.image} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:creator" content={seo.author || ``} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={seo.description} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={seo.title} />
