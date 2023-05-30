@@ -57,11 +57,10 @@ export const ToggleThemeProvider = ({ children }) => {
   const [mode, toggleTheme] = useState(true);
   const theme = useMemo(() => _getTheme(mode), [mode]);
   return (
-    <ThemeProvider theme={theme}>
+    // <ThemeProvider theme={theme}>
       <ToggleThemeContext.Provider value={{ theme, toggleTheme }}>
-        <CssBaseline />
         {children}
       </ToggleThemeContext.Provider>
-    </ThemeProvider>
+    // </ThemeProvider>
   );
 };
