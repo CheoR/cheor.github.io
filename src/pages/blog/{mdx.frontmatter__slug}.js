@@ -11,40 +11,42 @@ const BlogPost = ({ data, children }) => {
   const image = getImage(fm.hero_image);
 
   return (
-    <Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <GatsbyImage image={image} alt={fm.hero_image_alt} />
-      </Box>
-      <Box component="p" align="center">
-        <Typography variant="caption">
-          Photo Credit:{" "}
-          <Link
-            aria-label={fm.hero_image_credit_text}
-            color="inherit"
-            href={fm.hero_image_credit_link}
-            rel="noreferrer"
-            target="_blank"
-            underline="hover"
-          >
-            {fm.hero_image_credit_text}
-          </Link>
-        </Typography>
-      </Box>
-      <Typography variant="subtitle2">{fm.datePublished}</Typography>
-      <Box sx={{ display: "flex", gap: 1 }}>
-        {fm.tags.map((tag) => (
-          <Typography key={tag} variant="subtitle1">
-            #{tag}
+    <Layout>
+      <Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <GatsbyImage image={image} alt={fm.hero_image_alt} />
+        </Box>
+        <Box component="p" align="center">
+          <Typography variant="caption">
+            Photo Credit:{" "}
+            <Link
+              aria-label={fm.hero_image_credit_text}
+              color="inherit"
+              href={fm.hero_image_credit_link}
+              rel="noreferrer"
+              target="_blank"
+              underline="hover"
+            >
+              {fm.hero_image_credit_text}
+            </Link>
           </Typography>
-        ))}
+        </Box>
+        <Typography variant="subtitle2">{fm.datePublished}</Typography>
+        <Box sx={{ display: "flex", gap: 1 }}>
+          {fm.tags.map((tag) => (
+            <Typography key={tag} variant="subtitle1">
+              #{tag}
+            </Typography>
+          ))}
+        </Box>
+        {children}
       </Box>
-      {children}
-    </Box>
+    </Layout>
   );
 };
 
@@ -74,13 +76,13 @@ export const query = graphql`
   }
 `;
 
-export default BlogPost;
-
 export const Head = ({ data }) => (
   // eslint-disable-next-line
   <SEO
-    title={data.mdx.frontmatter.title}
-    description={`Blog about ${data.mdx.frontmatter.title}`}
-    image={data.mdx.frontmatter.hero_image}
+  title={data.mdx.frontmatter.title}
+  description={`Blog about ${data.mdx.frontmatter.title}`}
+  image={data.mdx.frontmatter.hero_image}
   />
-);
+  );
+  
+export default BlogPost;

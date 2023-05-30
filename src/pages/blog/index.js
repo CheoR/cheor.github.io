@@ -17,7 +17,11 @@ const Blog = ({ data: _data }) => {
     tags: ["All", ...new Set(BLOGS.flatMap((blog) => blog.frontmatter.tags))],
   };
 
-  return <Gallery data={BLOGS} filters={filters} />;
+  return (
+    <Layout>
+      <Gallery data={BLOGS} filters={filters} />
+    </Layout>
+  );
 };
 
 export const query = graphql`
@@ -49,7 +53,7 @@ export const query = graphql`
   }
 `;
 
-export default Blog;
-
 // eslint-disable-next-line
 export const Head = () => <SEO title="My Ramblings" description="Blogs Page" />;
+
+export default Blog;

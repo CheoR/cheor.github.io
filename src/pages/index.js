@@ -14,7 +14,11 @@ const filters = {
 };
 
 function Home() {
-  return <Gallery data={PROJECTS} filters={filters} />;
+  return (
+    <Layout>
+      <Gallery data={PROJECTS} filters={filters} />
+    </Layout>
+    );
 }
 
 export default Home;
