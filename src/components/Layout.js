@@ -1,11 +1,30 @@
-import React from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import React, { useContext }  from "react";
+import { Box, Container, Grid, ThemeProvider, Typography } from "@mui/material";
+import { useStaticQuery, graphql } from "gatsby"
+import { CssBaseline } from "@mui/material"
 
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
+import { ToggleThemeContext } from "../context/Theme";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import Header from "./Header";
 
 const Layout = ({ pageTitle, children }) => {
+  const { theme } = useContext(ToggleThemeContext)
+
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
   return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Grid
         container
         sx={{
@@ -30,6 +49,7 @@ const Layout = ({ pageTitle, children }) => {
           <Footer />
         </Grid>
       </Grid>
+    </ThemeProvider>
   );
 };
 
