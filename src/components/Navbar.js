@@ -24,8 +24,7 @@ import { PAGES } from "../data/data";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const { toggleTheme } = useContext(ToggleThemeContext);
-   const [isDark, setIsDark] = useState(false); // theme.palette.mode doesn't toggle
+  const { theme, toggleTheme } = useContext(ToggleThemeContext);
 
   const handleOpenNavMenu = (event) => setAnchorElNav(event.currentTarget);
   const handleCloseNavMenu = () => setAnchorElNav(null);
@@ -184,10 +183,9 @@ const Navbar = () => {
             }}
             onClick={() => {
               toggleTheme((prevState) => !prevState);
-              setIsDark((prevState) => !prevState);
             }}
           >
-            { isDark ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />}
+            { theme.palette.mode === "dark" ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />}
           </Box>
         </Toolbar>
       </Container>

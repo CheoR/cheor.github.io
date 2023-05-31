@@ -8,7 +8,7 @@ export const ToggleThemeContext = createContext();
 const _getTheme = (isDark) => {
   const theme = createTheme({
     palette: {
-      mode: true ? "dark" : "light",
+      mode: isDark ? "dark" : "light",
       ...(isDark
         ? {
             // dark mode palette values
@@ -50,6 +50,7 @@ const _getTheme = (isDark) => {
           }),
     },
   });
+
   return theme;
 };
 
