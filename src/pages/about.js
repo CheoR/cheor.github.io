@@ -65,6 +65,7 @@ const AboutPage = () => {
           >
             {TECH.map((img) => (
               <Link
+                key={img.alt}
                 aria-label={img.alt}
                 href={img.href}
                 rel="noreferrer"
