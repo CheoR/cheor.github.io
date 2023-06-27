@@ -375,6 +375,18 @@ export const PROJECTS = [
     tags: ["CI", "Django", "TDD"],
     title: "Wine Recommender",
   },
+  {
+    alt: "GitHub Project: Lemonade",
+    aria: "GitHub Project: Lemonade",
+    description:
+      "Learning Jetpack Compose with Kotlin. ",
+    id: "37e42ceb-e3fc-4531-9fa4-dac1f02fa3ef",
+    link: "",
+    preview: "",
+    repo: "https://github.com/CheoR/android-lemonade",
+    tags: ["Android", "Kotlin", "Jetpack",],
+    title: "Lemonade",
+  },
   // {
   // alt: "GitHub Project: Free Code Camp Projects",
   //   aria: "GitHub Project: Free Code Camp Projects",
